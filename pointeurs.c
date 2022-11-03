@@ -9,7 +9,7 @@ int main(void)
 	b = 54;
 	a = 10;
 	pa = &a;
-	printf("Adresse pointe par p = %p\n", pa);
+	printf("Adresse pointe par pa = %p\n", pa);
 	printf("Adresse de la variable a = %p\n", &a);
 	printf("Valeur de la variable a = %d\n", a);
 	printf("Valeur de la variable de a pointe par p = %d\n", *pa);
@@ -49,7 +49,7 @@ int main(void)
 	int tab[5] = {12, 5, 7, 8, 10};
 	int i = 0;
 	while (i < 5)
-	{	
+	{
 		printf("%p = adresse de &tab[i]\n", &tab[i]);
 		printf("%p = adresse de (tab + i)\n", (tab + i));
 		printf("%d = valeur de tab[i]\n", tab[i]);
@@ -61,6 +61,7 @@ int main(void)
 	int *ptrtab2 = tab2;
 	printf("%d\n", *ptrtab2);
 	ptrtab2++;
+	printf("%d = valeur de ptrtab2\n", *ptrtab2);
 	printf("%d\n", *ptrtab2);
 }
 
