@@ -1,5 +1,6 @@
 #include "libft.h"
-
+/* La fonction memchr() examine les n premiers octets de la zone mémoire pointée par s à la recherche du caractère c. 
+Le premier octet correspondant à c (interprété comme un unsigned char) arrête l'opération*/
 void *ft_memchr(const void *memoryBlock, int searchedChar, size_t size)
 {
     size_t i;
