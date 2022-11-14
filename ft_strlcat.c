@@ -1,13 +1,25 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: chabrune <charlesbrunet51220@gmail.com>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/11/14 18:49:14 by chabrune          #+#    #+#             */
+/*   Updated: 2022/11/14 18:49:14 by chabrune         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
-size_t		ft_strlcat(char *dst, const char *src, size_t size)
+size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
-	size_t		i;
-	size_t		dstlen;
-	size_t		srclen;
+	size_t	i;
+	size_t	dstlen;
+	size_t	srclen;
 
 	i = 0;
-	dstlen = ft_strlen((char*)dst);
+	dstlen = ft_strlen((char *)dst);
 	srclen = ft_strlen(src);
 	if (size <= dstlen)
 		return (srclen + size);

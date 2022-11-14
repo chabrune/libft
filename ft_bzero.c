@@ -1,15 +1,27 @@
-#include "libft.h"
-//La fonction bzero() met à 0 (octets contenant « \0 ») les n premiers octets du bloc pointé par s
-void ft_bzero(void *s, size_t n)
-{
-    size_t i;
-    i = 0;
-    char *str;
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: chabrune <charlesbrunet51220@gmail.com>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/11/14 18:35:16 by chabrune          #+#    #+#             */
+/*   Updated: 2022/11/14 18:46:14 by chabrune         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-    str = (char *)s;
-    while(i < n)
-    {
-        str[i] = 0;
-        i++;
-    }
+#include "libft.h"
+
+void	ft_bzero(void *s, size_t n)
+{
+	size_t	i;
+	char	*str;
+
+	i = 0;
+	str = (char *)s;
+	while (i < n)
+	{
+		str[i] = 0;
+		i++;
+	}
 }

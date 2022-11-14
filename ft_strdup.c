@@ -1,22 +1,33 @@
-#include "libft.h"
-/*La fonction strdup() renvoie un pointeur sur une nouvelle chaîne de caractères qui est dupliquée depuis s. 
-La mémoire occupée par cette nouvelle chaîne est obtenue en appelant malloc(3), et peut (doit) donc être libérée avec free(3)*/
-char *ft_strdup(const char *s)
-{
-    size_t i;
-    char *str;
-    size_t len;
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: chabrune <charlesbrunet51220@gmail.com>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/11/14 18:49:01 by chabrune          #+#    #+#             */
+/*   Updated: 2022/11/14 18:49:06 by chabrune         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-    i = 0;
-    len = ft_strlen(s);
-    str = (char*)malloc(sizeof(char) * (len + 1));
-    if(!str)
-        return(NULL);
-    while(i < len)
-    {
-        str[i] = s[i];
-        i++;
-    }
-    str[i] = '\0';
-    return(str);
+#include "libft.h"
+
+char	*ft_strdup(const char *s)
+{
+	size_t	i;
+	char	*str;
+	size_t	len;
+
+	i = 0;
+	len = ft_strlen(s);
+	str = (char *)malloc(sizeof(char) * (len + 1));
+	if (!str)
+		return (NULL);
+	while (i < len)
+	{
+		str[i] = s[i];
+		i++;
+	}
+	str[i] = '\0';
+	return (str);
 }

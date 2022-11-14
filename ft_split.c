@@ -1,9 +1,21 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: chabrune <charlesbrunet51220@gmail.com>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/11/14 18:48:49 by chabrune          #+#    #+#             */
+/*   Updated: 2022/11/14 18:48:50 by chabrune         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 static int	ft_count_word(char const *s, char c)
 {
-	int i;
-	int word;
+	int	i;
+	int	word;
 
 	i = 0;
 	word = 0;
@@ -41,31 +53,31 @@ static void	ft_free(char **strs, int j)
 	free(strs);
 }
 
-char *ft_substr(char const *s, unsigned int start, size_t len)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-    size_t i;
-    size_t j;
-    char *str;
+	size_t	i;
+	size_t	j;
+	char	*str;
 
-    j = 0;
-    i = 0;
-    str = (char *)malloc(ft_strlen((char*)s) * sizeof(len + 1));
-    if(!str)
-        return(NULL);
-    while(s[i])
-    {
-        if(i >= start && j < len)
-        {
-            str[j] = s[i];
-            j++;
-        }
-        i++;
-    }
-    str[j] = 0;
-    return(str);
+	j = 0;
+	i = 0;
+	str = (char *)malloc(ft_strlen((char *)s) * sizeof(len + 1));
+	if (!str)
+		return (NULL);
+	while (s[i])
+	{
+		if (i >= start && j < len)
+		{
+			str[j] = s[i];
+			j++;
+		}
+		i++;
+	}
+	str[j] = 0;
+	return (str);
 }
 
-char		**ft_split(char const *s, char c)
+char	**ft_split(char const *s, char c)
 {
 	int		i;
 	int		word;
@@ -94,28 +106,27 @@ char		**ft_split(char const *s, char c)
 	return (strs);
 }
 
-size_t ft_strlen(const char *str)
+size_t	ft_strlen(const char *str)
 {
-    size_t i;
-    i = 0;
+	size_t	i;
 
-    while(str[i])
-        i++;
-    return(i);
+	i = 0;
+	while (str[i])
+		i++;
+	return (i);
 }
 
+// #include <stdio.h>
 
-#include <stdio.h>
+// int main(void)
+// {
+//     char **res;
+//     char *str = "jesuistonpere";
+//     char test;
 
-int main(void)
-{
-    char **res;
-    char *str = "jesuistonpere";
-    char test;
+//     test = 's';
 
-    test = 's';
- 
-    res = ft_split(str, test);
-    printf("%s %s %s", res[0], res[1] , res[2]);
-    return (0);
-}
+//     res = ft_split(str, test);
+//     printf("%s %s %s", res[0], res[1] , res[2]);
+//     return (0);
+// }

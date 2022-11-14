@@ -1,3 +1,15 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: chabrune <charlesbrunet51220@gmail.com>    +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2022/11/14 18:51:05 by chabrune          #+#    #+#              #
+#    Updated: 2022/11/14 18:51:05 by chabrune         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 SRCS			= ft_atoi.c \
 				ft_bzero.c \
 				ft_calloc.c \
@@ -24,7 +36,12 @@ SRCS			= ft_atoi.c \
 				ft_tolower.c \
 				ft_toupper.c \
 				ft_itoa.c \
-				ft_strnstr.c
+				ft_strnstr.c \
+				ft_putchar_fd.c \
+				ft_putstr_fd.c \
+				ft_putendl_fd.c \
+				ft_putnbr_fd.c \
+				ft_strmapi.c
 
 OBJS			= $(SRCS:.c=.o)
 

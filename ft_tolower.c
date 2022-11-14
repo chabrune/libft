@@ -1,9 +1,21 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_tolower.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: chabrune <charlesbrunet51220@gmail.com>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/11/14 18:50:07 by chabrune          #+#    #+#             */
+/*   Updated: 2022/11/14 18:50:13 by chabrune         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
-/*tolower() converts the letter c to lower case, if possible.*/
-int ft_tolower(int c)
+
+int	ft_tolower(int c)
 {
-    if(c >= 'A' && c <= 'Z')
-        return (c + 32);
-    else
-        return(c);
+	if (c >= 'A' && c <= 'Z')
+		return (c + 32);
+	else
+		return (c);
 }
