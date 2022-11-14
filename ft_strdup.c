@@ -1,35 +1,22 @@
 #include "libft.h"
 /*La fonction strdup() renvoie un pointeur sur une nouvelle chaîne de caractères qui est dupliquée depuis s. 
 La mémoire occupée par cette nouvelle chaîne est obtenue en appelant malloc(3), et peut (doit) donc être libérée avec free(3)*/
-int ft_strlen(char *str)
-{
-    int i;
-    i = 0;
-
-    while(str[i])
-        i++;
-    return(i);
-}
-
 char *ft_strdup(const char *s)
 {
-    int i;
+    size_t i;
     char *str;
+    size_t len;
 
     i = 0;
-    str = (char *)malloc(ft_strlen((char*)s) * sizeof(char));
-    while(s[i])
+    len = ft_strlen(s);
+    str = (char*)malloc(sizeof(char) * (len + 1));
+    if(!str)
+        return(NULL);
+    while(i < len)
     {
-        str = (char*)s;
+        str[i] = s[i];
         i++;
     }
+    str[i] = '\0';
     return(str);
-}
-
-#include <stdio.h>
-
-int main(void)
-{
-    char str[] = "jesuistonpere";
-    printf("%s", ft_strdup(str));
 }

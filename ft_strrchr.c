@@ -16,13 +16,3 @@ char *ft_strrchr(const char *s, int c)
     return(NULL);
 
 }
-
-#include <stdio.h>
-
-int main(void)
-{
-    char str[] = "jesuius";
-    char search = 'u';
-
-    printf("%s", ft_strrchr(str, search));
-}

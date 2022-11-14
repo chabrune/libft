@@ -1,15 +1,5 @@
 #include "libft.h"
 
-int ft_strlen(char *str)
-{
-    int i;
-    i = 0;
-
-    while(str[i])
-        i++;
-    return(i);
-}
-
 char *ft_substr(char const *s, unsigned int start, size_t len)
 {
     size_t i;
@@ -18,7 +8,12 @@ char *ft_substr(char const *s, unsigned int start, size_t len)
 
     j = 0;
     i = 0;
-    str = (char *)malloc(ft_strlen((char*)s) * sizeof(len + 1));
+    if (ft_strlen(s) < start)
+        return(ft_calloc(1,1));
+    if(len <= (ft_strlen(s + start)))
+        str = (char *)malloc((len + 1) * sizeof(char));
+    else if(len > (ft_strlen(s + start)))
+        str = (char *)malloc((ft_strlen(s + start) + 1) * sizeof(char));    
     if(!str)
         return(NULL);
     while(s[i])
@@ -32,13 +27,4 @@ char *ft_substr(char const *s, unsigned int start, size_t len)
     }
     str[j] = 0;
     return(str);
-}
-
-#include <stdio.h>
-int main(void)
-{
-    char s[] = "je suis ton pere";
-    printf("%s", ft_substr(s, 4, 10));
-
-
 }

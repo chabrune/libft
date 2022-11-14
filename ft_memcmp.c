@@ -7,23 +7,18 @@ int ft_memcmp(const void *pointer1, const void *pointer2, size_t size)
     unsigned char *snd;
     st = (unsigned char*)pointer1;
     snd = (unsigned char*)pointer2;
-    int i;
 
-    i = 0;
-    while((st[i] || snd[i]) && size > i)
-    {
-        if(st[i] > snd[i])
-            return(1);
-        else if(st[i] < snd[i])
-            return(-1);
+    if(st == snd || size == 0)
         return(0);
+    while(size--)
+    {
+        if(*st != *snd)
+            return(*st - *snd);
+        else
+        {
+            st++;
+            snd++;
+        }
     }
-}
-#include <stdio.h>
-
-int main(void)
-{
-    char st[] = "hola";
-    char snd[] = "hola";
-    printf("%d", ft_memcmp(st, snd, 4));
+    return(0);
 }

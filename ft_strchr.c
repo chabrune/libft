@@ -13,12 +13,3 @@ char	*ft_strchr(const char *s, int c)
     }
     return(str);
 }
-
-#include <stdio.h>
-
-int main(void)
-{
-    char str[] = "llllellll";
-    char search = 'e';
-    printf("%s", ft_strchr(str, search));
-}

@@ -7,11 +7,3 @@ int ft_tolower(int c)
     else
         return(c);
 }
-
-#include <stdio.h>
-
-int main(void)
-{
-
-    printf("%d", ft_tolower('a'));
-}

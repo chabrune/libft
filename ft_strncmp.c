@@ -3,23 +3,18 @@
 int ft_strncmp(const char *first, const char *second, size_t length)
 {
     size_t i;
-
+    unsigned char *prem;
+    unsigned char *snd;
+    prem = (unsigned char*)first;
+    snd = (unsigned char*)second;
     i = 0;
-    while((first[i] || second[i]) && i < length)
+    while((prem[i] || snd[i]) && i < length)
     {
-        if(first[i] > second[i])
+        if(prem[i] > snd[i])
             return(1);
-        else if(first[i] < second[i])
+        else if(prem[i] < snd[i])
             return(-1);
         i++;
     }
     return(0);
-}
-#include <stdio.h>
-
-int main(void)
-{
-    char *f = "Z";
-    char *s = "BB";
-    printf("%d", ft_strncmp(f, s, 5));
 }
