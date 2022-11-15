@@ -1,18 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
+/*   ft_is_alpha.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: chabrune <charlesbrunet51220@gmail.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/14 18:56:36 by chabrune          #+#    #+#             */
-/*   Updated: 2022/11/14 18:56:36 by chabrune         ###   ########.fr       */
+/*   Created: 2022/11/04 13:31:28 by chabrune          #+#    #+#             */
+/*   Updated: 2022/11/15 17:18:03 by chabrune         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <ctype.h>
 
-void	ft_putchar_fd(char c, int fd)
+int	ft_isalpha(int c)
 {
-	write(fd, &c, 1);
+	if ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z'))
+		return (1);
+	else
+		return (0);
 }

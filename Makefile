@@ -41,7 +41,9 @@ SRCS			= ft_atoi.c \
 				ft_putstr_fd.c \
 				ft_putendl_fd.c \
 				ft_putnbr_fd.c \
-				ft_strmapi.c
+				ft_strmapi.c \
+				ft_striteri.c \
+				ft_split.c
 
 OBJS			= $(SRCS:.c=.o)
 
