@@ -6,19 +6,19 @@
 /*   By: chabrune <charlesbrunet51220@gmail.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/15 18:31:47 by chabrune          #+#    #+#             */
-/*   Updated: 2022/11/15 18:35:22 by chabrune         ###   ########.fr       */
+/*   Updated: 2022/11/16 13:21:41 by chabrune         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	ft_count_word(const char *s, char c)
+static int	ft_count_word(char const *s, char c)
 {
-	int	word;
 	int	i;
+	int	word;
 
-	word = 0;
 	i = 0;
+	word = 0;
 	while (s[i])
 	{
 		if (s[i] != c)
@@ -33,7 +33,7 @@ static int	ft_count_word(const char *s, char c)
 	return (word);
 }
 
-static int	ft_size_word(const char *s, char c, int i)
+static int	ft_size_word(char const *s, char c, int i)
 {
 	int	size;
 
@@ -53,18 +53,26 @@ static void	ft_free(char **strs, int j)
 	free(strs);
 }
 
-char	**ft_split(char const *s, char c)
+static int	ft_assign(int *i, int *j, const char *s, char c)
+{
+	int	word;
+
+	*i = 0;
+	*j = -1;
+	word = ft_count_word(s, c);
+	return (word);
+}
+
+char	**ft_split(const char *s, char c)
 {
 	int		i;
-	int		word;
-	char	**strs;
-	int		size;
 	int		j;
+	int		word;
+	int		size;
+	char	**strs;
 
-	i = 0;
-	j = -1;
-	word = ft_count_word(s, c);
-	strs = (char **)malloc((word + 1) * sizeof(char *));
+	word = ft_assign(&i, &j, s, c);
+	strs = (char **)malloc(sizeof(char *) * (word + 1));
 	if (!strs)
 		return (NULL);
 	while (++j < word)
@@ -82,19 +90,4 @@ char	**ft_split(char const *s, char c)
 	}
 	strs[j] = 0;
 	return (strs);
-}
-
-#include <stdio.h>
-
-int	main(void)
-{
-	char **res;
-	char *str = "jesuistonpere";
-	char test;
-
-	test = 's';
-
-	res = ft_split(str, test);
-	printf("%s %s %s", res[0], res[1], res[2]);
-	return (0);
 }
