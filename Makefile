@@ -45,6 +45,18 @@ SRCS			= ft_atoi.c \
 				ft_striteri.c \
 				ft_split.c
 
+BONUS			= ft_lstmap_bonus.c \
+				ft_lstadd_front_bonus.c \
+				ft_lstsize_bonus.c \
+				ft_lstlast_bonus.c \
+				ft_lstadd_back_bonus.c \
+				ft_lstdelone_bonus.c \
+				ft_lstclear_bonus.c \
+				ft_lstiter_bonus.c \
+				ft_lstnew_bonus.c \
+
+BONUS_OBJS		= $(BONUS:.c=.o)
+
 OBJS			= $(SRCS:.c=.o)
 
 CC				= gcc
@@ -59,9 +71,14 @@ $(NAME):		$(OBJS)
 				ar rcs $(NAME) $(OBJS)
 
 clean:
-				$(RM) $(OBJS)
+				$(RM) $(OBJS) $(BONUS_OBJS)
 
 fclean:			clean
 				$(RM) $(NAME)
 
 re:				fclean $(NAME)
+
+bonus:			$(OBJS) $(BONUS_OBJS)
+				ar rcs $(NAME) $(OBJS) $(BONUS_OBJS)
+
+.PHONY:			all clean fclean re bonus
