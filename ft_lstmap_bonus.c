@@ -6,19 +6,7 @@
 /*   By: chabrune <charlesbrunet51220@gmail.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 15:38:38 by chabrune          #+#    #+#             */
-/*   Updated: 2022/11/23 16:41:58 by chabrune         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_lstmap_bonus.c                                  :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: chabrune <charlesbrunet51220@gmail.com>    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/17 14:50:19 by chabrune          #+#    #+#             */
-/*   Updated: 2022/11/17 14:50:19 by chabrune         ###   ########.fr       */
+/*   Updated: 2022/11/24 11:41:00 by chabrune         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,14 +18,12 @@ t_list	*ft_lstnewnew(void *content, void (*del)(void *))
 
 	temp = (t_list *)malloc(sizeof(*temp));
 	if (!temp)
-		return (NULL);
-	if (del)
-		del(temp->content);
-	else
 	{
-		temp->content = content;
-		temp->next = NULL;
+		del(content);
+		return (NULL);
 	}
+	temp->content = content;
+	temp->next = NULL;
 	return (temp);
 }
 
