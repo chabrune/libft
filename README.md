@@ -70,9 +70,5 @@ make re     # Recompile tout
 - Compilation avec -Wall -Wextra -Werror
 - Gestion de la mémoire rigoureuse
 
-## 🔍 Tests
-
-Il est recommandé de créer vos propres tests pour valider le bon fonctionnement de chaque fonction.
-
 ---
 *Projet réalisé dans le cadre du cursus de l'école 42*
