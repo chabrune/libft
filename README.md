@@ -1,7 +1,5 @@
 # Libft
 
-C
-
 Une bibliothèque C contenant des fonctions essentielles réimplémentées pour une utilisation future dans les projets 42.
 
 ## 📚 Description
