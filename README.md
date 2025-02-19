@@ -50,15 +50,6 @@ typedef struct s_list {
 - ft_lstiter
 - ft_lstmap
 
-## ⚙️ Compilation
-
-```bash
-make        # Compile la bibliothèque
-make bonus  # Ajoute les fonctions bonus
-make clean  # Nettoie les fichiers objets
-make fclean # Nettoie tout
-make re     # Recompile tout
-```
 
 ## 📋 Normes de Code
 
