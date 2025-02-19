@@ -1,4 +1,4 @@
-# Libft - Ta Bibliothèque C Personnelle
+# Libft
 
 C
 
